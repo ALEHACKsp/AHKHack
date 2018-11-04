@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -84,16 +84,19 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;AHKHACK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;AHKHACK_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Ahmed Hassan Khan\source\repos\AHKHack\AHKHack\detours;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Ahmed Hassan Khan\source\repos\AHKHack\AHKHack\detours;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -112,7 +115,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -147,18 +150,47 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="AHKHack.h" />
+    <ClInclude Include="Aimbot.h" />
+    <ClInclude Include="AllWeaponsAuto.h" />
+    <ClInclude Include="AlwaysHeadshot.h" />
+    <ClInclude Include="Classes.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Drawing.h" />
+    <ClInclude Include="ESP.h" />
+    <ClInclude Include="GameFunctions.h" />
+    <ClInclude Include="Hack.h" />
+    <ClInclude Include="KillAll.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="NoRecoil.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="RapidFire.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="tinyxml2.h" />
+    <ClInclude Include="UnlimitedStuff.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AHKHack.cpp" />
+    <ClCompile Include="Aimbot.cpp" />
+    <ClCompile Include="AllWeaponsAuto.cpp" />
+    <ClCompile Include="AlwaysHeadshot.cpp" />
+    <ClCompile Include="Classes.cpp" />
+    <ClCompile Include="Config.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="Drawing.cpp" />
+    <ClCompile Include="ESP.cpp" />
+    <ClCompile Include="GameFunctions.cpp" />
+    <ClCompile Include="Hack.cpp" />
+    <ClCompile Include="KillAll.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="NoRecoil.cpp" />
+    <ClCompile Include="Offsets.h" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="RapidFire.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="UnlimitedStuff.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
